@@ -4,6 +4,7 @@ import { DayOrdersCard } from './day-orders-card copy'
 import { MonthCanceledOrdersCard } from './month-canceled-orders-card'
 import { MonthOrdersCard } from './month-orders-card'
 import { MonthRevenueCard } from './month-revenue-card'
+import { RevenueChart } from './revenue-chart'
 
 export function Dashboard() {
   return (
@@ -13,12 +14,16 @@ export function Dashboard() {
       <div className="flex flex-col gap-4">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
 
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           <MonthRevenueCard />
           <MonthOrdersCard />
           <DayOrdersCard />
           <MonthCanceledOrdersCard />
-        </div>
+        </section>
+
+        <section className="grid grid-cols-9 gap-4">
+          <RevenueChart />
+        </section>
       </div>
     </>
   )
