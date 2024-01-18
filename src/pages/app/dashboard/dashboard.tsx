@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-import { DayOrdersCard } from './day-orders-card copy'
+import { DayOrdersCard } from './day-orders-card'
 import { MonthCanceledOrdersCard } from './month-canceled-orders-card'
 import { MonthOrdersCard } from './month-orders-card'
 import { MonthRevenueCard } from './month-revenue-card'
