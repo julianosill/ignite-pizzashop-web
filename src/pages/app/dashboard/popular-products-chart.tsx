@@ -73,8 +73,8 @@ export function PopularProductsChart() {
                     >
                       {popularProducts[index].product.length > 12
                         ? popularProducts[index].product
-                          .substring(0, 12)
-                          .concat('...')
+                            .substring(0, 12)
+                            .concat('...')
                         : popularProducts[index].product}{' '}
                       ({value})
                     </text>
