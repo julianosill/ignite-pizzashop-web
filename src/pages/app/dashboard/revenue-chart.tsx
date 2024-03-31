@@ -8,6 +8,7 @@ import {
   Line,
   LineChart,
   ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
 } from 'recharts'
@@ -43,7 +44,7 @@ export function RevenueChart() {
     return dailyRevenueInPeriod?.map((chartItem) => {
       return {
         date: chartItem.date,
-        receipt: chartItem.receipt / 100,
+        revenue: chartItem.revenueInCents / 100,
       }
     })
   }, [dailyRevenueInPeriod])
@@ -89,10 +90,27 @@ export function RevenueChart() {
 
               <CartesianGrid vertical={false} className="stroke-muted" />
 
+              <Tooltip
+                labelClassName="text-[#888]"
+                formatter={(value) =>
+                  Number(value).toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })
+                }
+                contentStyle={{
+                  background: 'hsl(var(--card))',
+                  borderColor: 'hsl(var(--border))',
+                  borderRadius: 'calc(var(--radius) - 2px)',
+                  padding: '0.75rem 0.75rem 0.5rem',
+                }}
+              />
+
               <Line
                 type="linear"
                 strokeWidth={2}
-                dataKey="receipt"
+                dataKey="revenue"
+                name="Receita"
                 stroke={colors.emerald[500]}
               />
 
